@@ -4,12 +4,12 @@ const contentController = require("../../controllers/content.controller");
 
 router
   .route("/")
-  .get(contentController.getAllContents)
+  .get(contentController.getContents)
   .post(contentController.createContent);
 
 router
   .route("/:id")
-  .get(contentController.getContentById)
+  .get(contentController.getContent)
   .put(contentController.updateContent)
   .delete(contentController.deleteContent);
 

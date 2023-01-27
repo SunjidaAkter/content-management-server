@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(cors());
 
 //routes
-const contentRoute = require("./routes/v1/user.route");
+const contentRoute = require("./routes/v1/content.route");
 
 //checking routes
 app.get("/", (req, res) => {

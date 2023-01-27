@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
-const validator = require("validator");
-const crypto = require("crypto");
-const bcrypt = require("bcryptjs");
+// const validator = require("validator");
+// const crypto = require("crypto");
+// const bcrypt = require("bcryptjs");
 
 const contentSchema = mongoose.Schema(
   {
