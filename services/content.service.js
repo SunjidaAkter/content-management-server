@@ -9,14 +9,8 @@ exports.createContent = async (data) => {
   return contents;
 };
 exports.updateContent = async (id, data) => {
-  const contents = await Content.updateOne(
-    { _id: id },
-    { $set: data },
-    {
-      runValidators: true,
-    }
-  );
-  return tours;
+  const contents = await Content.updateOne({ id: id }, { $set: data });
+  return contents;
 };
 exports.getContent = async (id) => {
   const contents = await Content.findById(id);

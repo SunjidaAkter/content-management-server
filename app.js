@@ -15,6 +15,6 @@ app.get("/", (req, res) => {
   res.send("working properly!");
 });
 
-app.use("/content", contentRoute);
+app.use("/api/v1/content", contentRoute);
 
 module.exports = app;

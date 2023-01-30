@@ -2,13 +2,14 @@ const { StatusError } = require("../utils/statusError");
 const contentService = require("../services/content.service");
 const {
   validateUpdateContent,
+  validateContent,
 } = require("../utils/validations/content.validation");
 
 // @desc    Create New Pricing.
 // @route   POST /pricings
 // @access  Private
 exports.getContents = async (req, res) => {
-  const result = await contentService.getAllContents();
+  const result = await contentService.getContents();
   if (!result) throw StatusError("No contents found!", 404);
   res.status(200).send(result);
 };
@@ -21,7 +22,7 @@ exports.createContent = async (req, res) => {
   const { error, value } = validateContent.validate(req.body);
   if (error) throw StatusError(error.message, 400);
   //create
-  const result = await contentService.createContents(value);
+  const result = await contentService.createContent(value);
   res.status(201).send({ message: "Pricing added successfully" });
 };
 
@@ -29,9 +30,9 @@ exports.createContent = async (req, res) => {
 // @route   GET /pricings/:id
 // @access  Public
 exports.getContent = async (req, res) => {
-  const result = await contentService.getContentById(req.params.id);
+  const result = await contentService.getContent(req.params.id);
   if (!result) throw StatusError("Contents not found!", 404);
-  res.status(200).send(pricing);
+  res.status(200).send(result);
 };
 
 // @desc    Update Pricing
@@ -45,7 +46,7 @@ exports.updateContent = async (req, res) => {
   const { error, value } = validateUpdateContent.validate(req.body);
   if (error) throw StatusError(error.message, 400);
   // Update
-  const result = await contentService.updateContentById(req.params, value);
+  const result = await contentService.updateContent(req.params, value);
   if (!result) throw StatusError("Content not found!", 404);
   res.status(200).send({
     message: "Content updated successfully",
