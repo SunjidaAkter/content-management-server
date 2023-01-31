@@ -33,3 +33,9 @@ const contentSchema = mongoose.Schema(
 const Content = mongoose.model("Content", contentSchema);
 
 module.exports = Content;
+
+// {
+//   "title":"Hello",
+//   "img":"https://pixlr.com/images/index/remove-bg.webp",
+//   "desc":"lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem"
+// }
