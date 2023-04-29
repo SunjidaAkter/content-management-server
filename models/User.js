@@ -44,15 +44,15 @@ const userSchema = mongoose.Schema(
       maxLength: [100, "Name is too large"],
     },
 
-    status: {
-      type: String,
-      required: [true, "Please provide user status"],
-      default: "inactive",
-      enum: {
-        values: ["active", "inactive", "blocked", "deleted"],
-        message: "status value can't be {VALUE}.",
-      },
-    },
+    // status: {
+    //   type: String,
+    //   required: [true, "Please provide user status"],
+    //   default: "inactive",
+    //   enum: {
+    //     values: ["active", "inactive", "blocked", "deleted"],
+    //     message: "status value can't be {VALUE}.",
+    //   },
+    // },
 
     confirmationToken: {
       type: String,
