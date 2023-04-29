@@ -9,7 +9,7 @@ const contentSchema = mongoose.Schema(
     title: {
       type: String,
       trim: true,
-      unique: true,
+      unique: false,
       required: [true, "Title is required"],
     },
 
@@ -19,10 +19,21 @@ const contentSchema = mongoose.Schema(
       required: [true, "Image URL is required"],
     },
 
+    brand: {
+      type: String,
+      trim: true,
+      required: [true, "brand is required"],
+    },
+
+    status: {
+      type: Boolean,
+      default: false,
+    },
+
     desc: {
       type: String,
       trim: true,
-      required: [true, "Image URL is required"],
+      required: [true, "descriptions are required"],
     },
   },
   {
