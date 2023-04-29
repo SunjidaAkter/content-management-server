@@ -27,7 +27,7 @@ const contentSchema = mongoose.Schema(
 
     status: {
       type: Boolean,
-      default: false,
+      enum: [true, false],
     },
 
     desc: {
